@@ -4,12 +4,8 @@ function scfReturn(err, data) {
   return {
     isBase64Encoded: false,
     statusCode: 200,
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      code: err ? 1 : 0,
-      err: err,
-      data: data,
-    }),
+    headers: { 'Content-Type': 'text/html' },
+    body: err ? `<h1>${err.message}</h1>` : `<img src="${data}"/>`,
   };
 }
 
@@ -29,9 +25,7 @@ exports.main_handler = async (event, context, callback) => {
       quality: 1,
       margin: 1,
     });
-    return scfReturn(null, {
-      url: dataUrl,
-    });
+    return scfReturn(null, dataUrl);
   } catch (e) {
     return scfReturn(e, null);
   }
