@@ -1,0 +1,25 @@
+Resources:
+  default:
+    Type: TencentCloud::Serverless::Namespace
+    qrgen:
+      Type: TencentCloud::Serverless::Function
+      Properties:
+        CodeUri: ./
+        Description: Generate QRCode
+        Environment:
+          Variables: {}
+        Handler: index.main_handler
+        Role: QCS_SCFExcuteRole
+        MemorySize: 128
+        Runtime: Nodejs8.9
+        Timeout: 3
+        VpcConfig:
+          SubnetId: ''
+          VpcId: ''
+        Events:
+          qrgen:
+            Type: APIGW
+            Properties:
+              StageName: release
+              ServiceId: service-7kqwzu92
+              HttpMethod: ANY
