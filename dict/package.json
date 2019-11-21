@@ -1,0 +1,21 @@
+{
+  "name": "qrgen",
+  "version": "0.0.1",
+  "description": "auto generate qrcode",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "scf deploy -f"
+  },
+  "keywords": [
+    "qrcode",
+    "serverless"
+  ],
+  "author": "yugasun",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "tslib": "^1.10.0",
+    "tss-capi": "^0.2.3"
+  }
+}
