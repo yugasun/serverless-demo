@@ -1,3 +1,5 @@
+'use strict';
+
 const path = require('path');
 const util = require('util');
 const exec = util.promisify(require('child_process').exec);
@@ -10,6 +12,7 @@ async function installDependencies(dir) {
   await exec(`cd ${dir} && npm install`);
 }
 
+/* eslint-disable  no-console*/
 async function bootstrap() {
   try {
     console.log('Start install dependencies...')
@@ -20,7 +23,7 @@ async function bootstrap() {
     ]);
     console.log('All dependencies installed.')
   } catch (e) {
-    throw e;
+    console.error(e);
   }
 }
 
