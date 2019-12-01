@@ -1,25 +1,24 @@
 const path = require('path');
 const util = require('util');
 const exec = util.promisify(require('child_process').exec);
-const ora = require('ora')
 
 const rootDir = path.join(__dirname, '..');
 const apiDir = path.join(rootDir, 'api');
 const dashboardDir = path.join(rootDir, 'dashboard');
 
 async function installDependencies(dir) {
-  await exec(`cd ${dir} && npm install --registry=https://registry.npm.taobao.org/`);
+  await exec(`cd ${dir} && npm install`);
 }
 
 async function bootstrap() {
   try {
-    const spinner = ora(`Start install dependencies`).start();
+    console.log('Start install dependencies...')
     await Promise.all([
       installDependencies(rootDir),
       installDependencies(apiDir),
       installDependencies(dashboardDir),
     ]);
-    spinner.stop();
+    console.log('All dependencies installed.')
   } catch (e) {
     throw e;
   }
