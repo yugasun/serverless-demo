@@ -75,6 +75,14 @@ After your first deployment, you will be able to run the frontend locally and ha
 $ cd dashboard && npm run start
 ```
 
+### Notice
+
+Because this project integrated cloud db connection, you should create a mysql instance on tencent cloud, please refer to official docs:
+
+[中文](https://cloud.tencent.com/document/product/583/38012)
+
+After you create a mysql instance, you should create a `.env` file in `api` folder, and set all required parameters like `.env.example`.
+
 ### License
 
 MIT
