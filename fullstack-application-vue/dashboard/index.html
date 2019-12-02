@@ -24,10 +24,52 @@
           <div class="button" v-on:click="queryServer">
             <div class="buttonInner">
               <div class="buttonLeft">ß</div>
-              <div class="buttonRight" v-bind:class="{ visible: isVisible }">{{ message }}</div>
+              <div class="buttonRight" v-bind:class="{ visible: isVisible }">
+                {{ message }}
+              </div>
             </div>
           </div>
         </div>
+
+        <!-- user form -->
+        <section class="user-form" action="#">
+          <div class="form-item">
+            <label for="name">
+              Name:
+            </label>
+            <input name="name" v-model="form.name" type="text" /><br />
+          </div>
+
+          <div class="form-item">
+            <label for="email">
+              Email:
+            </label>
+            <input name="email" v-model="form.email" type="email" /><br />
+          </div>
+
+          <div class="form-item">
+            <label for="site">
+              Site:
+            </label>
+            <input name="site" v-model="form.site" type="text" /><br />
+          </div>
+
+          <button @click="addUser">Submit</button>
+        </section>
+
+        <!-- user list -->
+        <section class="user-list">
+          <ul v-if="userList.length > 0">
+            <li v-for="item in userList" :key="item.id">
+              <p>
+                <b>Name: {{ item.name }}</b>
+                <b>Email: {{ item.email }}</b>
+                <b>Site: {{ item.site }}</b>
+              </p>
+            </li>
+          </ul>
+          <span v-else>No Data</span>
+        </section>
       </div>
     </div>
     <script src="./src/index.js"></script>

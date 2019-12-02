@@ -16,5 +16,11 @@ api:
   inputs:
     code: ./api
     functionName: fullstack-vue-api
+    role: QCS_SCFFull # You must add a role who can connect to your clound mysql
+    functionConf:
+      # you must set vpc config for mysql connnect
+      vpcConfig:
+          vpcId: vpc-6n5x55kb
+          subnetId: subnet-4cvr91js
     apigatewayConf:
       protocol: https
