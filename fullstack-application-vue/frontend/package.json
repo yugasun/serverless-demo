@@ -1,5 +1,5 @@
 {
-  "name": "@serverless-fullstack/dashboard",
+  "name": "@serverless-fullstack/frontend",
   "version": "0.0.1",
   "description": "",
   "dependencies": {

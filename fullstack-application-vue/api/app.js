@@ -6,6 +6,7 @@ const cors = require('cors');
 const mysql = require('mysql2');
 const bodyParser = require('body-parser');
 
+// init mysql connection
 function initMysqlPool() {
   const { DB_HOST, DB_PORT, DB_DATABASE, DB_USER, DB_PASSWORD } = process.env;
 
@@ -23,33 +24,29 @@ function initMysqlPool() {
   return promisePool;
 }
 
-function jsonReturn(data) {
-  return JSON.stringify(data);
-}
-
 const app = express();
+app.use(bodyParser.json());
+app.use(cors());
 
 if (!app.promisePool) {
   app.promisePool = initMysqlPool();
 }
 
-app.use(bodyParser.json());
-
-app.use(cors());
-
 app.get('/', (req, res) => {
-  res.send(jsonReturn({ message: `Server time: ${new Date().toString()}` }));
+  res.send(JSON.stringify({ message: `Server time: ${new Date().toString()}` }));
 });
 
+// get user list
 app.get('/users', async (req, res) => {
   const [data] = await app.promisePool.query('select * from users');
   res.send(
-    jsonReturn({
+    JSON.stringify({
       data: data,
     }),
   );
 });
 
+// add new user
 app.post('/users', async (req, res) => {
   let result = '';
   try {
@@ -70,7 +67,7 @@ app.post('/users', async (req, res) => {
     };
   }
 
-  res.send(jsonReturn(result));
+  res.send(JSON.stringify(result));
 });
 
 module.exports = app;

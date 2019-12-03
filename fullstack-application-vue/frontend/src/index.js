@@ -24,11 +24,13 @@ module.exports = new Vue({
       this.message = result.message;
     },
 
+    // get user list
     async getUsers() {
       const res = await axios.get(window.env.apiUrl + 'users');
       this.userList = res.data && res.data.data || [];
     },
 
+    // add a user
     async addUser() {
       const data = this.form;
       const res = await axios.post(window.env.apiUrl + 'users', data);
@@ -39,6 +41,7 @@ module.exports = new Vue({
     },
   },
   mounted() {
+    // get user list after ui mounted
     this.getUsers();
   }
 });

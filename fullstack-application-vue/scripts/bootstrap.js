@@ -1,30 +1,29 @@
-'use strict';
+const path = require('path')
+const shell = require('shelljs')
 
-const path = require('path');
-const util = require('util');
-const exec = util.promisify(require('child_process').exec);
-
-const rootDir = path.join(__dirname, '..');
-const apiDir = path.join(rootDir, 'api');
-const dashboardDir = path.join(rootDir, 'dashboard');
+const rootDir = path.join(__dirname, '..')
+const apiDir = path.join(rootDir, 'api')
+const frontendDir = path.join(rootDir, 'frontend')
 
 async function installDependencies(dir) {
-  await exec(`cd ${dir} && npm install`);
+  shell.cd(dir)
+  shell.exec('npm install')
 }
 
 /* eslint-disable  no-console*/
 async function bootstrap() {
   try {
     console.log('Start install dependencies...')
-    await Promise.all([
-      installDependencies(rootDir),
-      installDependencies(apiDir),
-      installDependencies(dashboardDir),
-    ]);
+    await installDependencies(apiDir)
+    await installDependencies(frontendDir)
     console.log('All dependencies installed.')
   } catch (e) {
-    console.error(e);
+    throw e
   }
 }
 
-bootstrap();
+bootstrap()
+
+process.on('unhandledRejection', (e) => {
+  throw e
+})

@@ -72,7 +72,7 @@ $ serverless --debug
 After your first deployment, you will be able to run the frontend locally and have it communicate to the live backend in the cloud.
 
 ```console
-$ cd dashboard && npm run start
+$ cd frontend && npm run start
 ```
 
 ### Notice

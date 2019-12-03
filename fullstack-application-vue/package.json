@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "scripts": {
     "bootstrap": "node scripts/bootstrap.js",
-    "dev": "cd dashboard && npm run start"
+    "dev": "cd frontend && npm run start"
   },
   "dependencies": {
     "@serverless/tencent-express": "^1.2.3",

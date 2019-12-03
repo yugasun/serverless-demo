@@ -1,18 +1,22 @@
 name: fullstack-application-vue
 
-dashboard:
+frontend:
   component: '@serverless/tencent-website'
+  # more configuration for @serverless/tencent-website, 
+  # refer to: https://github.com/serverless-components/tencent-website/blob/master/docs/configure.md
   inputs:
     code:
       src: dist
-      root: dashboard
+      root: frontend
       hook: npm run build
     env:
+      # get api url after below api service deployed.
       apiUrl: ${api.url}
-      # domain: www.serverlessmetrics.com # Insert your custom domain here
 
 api:
   component: '@serverless/tencent-express'
+  # more configuration for @serverless/tencent-website, 
+  # refer to: https://github.com/serverless-components/tencent-express/blob/master/docs/configure.md
   inputs:
     code: ./api
     functionName: fullstack-vue-api
