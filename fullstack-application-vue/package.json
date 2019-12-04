@@ -24,6 +24,8 @@
       "ecmaVersion": 2018
     }
   },
-  "eslintIgnore": ["node_modules"],
+  "eslintIgnore": [
+    "node_modules"
+  ],
   "license": "MIT"
 }

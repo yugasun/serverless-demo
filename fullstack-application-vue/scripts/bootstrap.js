@@ -1,25 +1,29 @@
+'use strict'
+
 const path = require('path')
-const shell = require('shelljs')
+const util = require('util')
+const exec = util.promisify(require('child_process').exec)
 
 const rootDir = path.join(__dirname, '..')
 const apiDir = path.join(rootDir, 'api')
 const frontendDir = path.join(rootDir, 'frontend')
 
 async function installDependencies(dir) {
-  shell.cd(dir)
-  shell.exec('npm install')
+  await exec('npm install', {
+    cwd: dir
+  })
 }
 
-/* eslint-disable  no-console*/
+/* eslint-disable no-console*/
 async function bootstrap() {
-  try {
-    console.log('Start install dependencies...')
-    await installDependencies(apiDir)
-    await installDependencies(frontendDir)
-    console.log('All dependencies installed.')
-  } catch (e) {
-    throw e
-  }
+  console.log('Start install dependencies...\n')
+  await installDependencies(rootDir)
+  console.log('Root dependencies installed success.')
+  await installDependencies(apiDir)
+  console.log('Api dependencies installed success.')
+  await installDependencies(frontendDir)
+  console.log('Frontend dependencies installed success.')
+  console.log('All dependencies installed.')
 }
 
 bootstrap()
