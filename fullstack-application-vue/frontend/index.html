@@ -62,9 +62,10 @@
           <ul v-if="userList.length > 0">
             <li v-for="item in userList" :key="item.id">
               <p>
-                <b>Name: {{ item.name }}</b>
-                <b>Email: {{ item.email }}</b>
+                <b>Name: {{ item.name }}</b>&nbsp;&nbsp;
+                <b>Email: {{ item.email }}</b>&nbsp;&nbsp;
                 <b>Site: {{ item.site }}</b>
+                <button @click="deleteUser(item.name)">x</button>
               </p>
             </li>
           </ul>

@@ -26,16 +26,50 @@ module.exports = new Vue({
 
     // get user list
     async getUsers() {
-      const res = await axios.get(window.env.apiUrl + 'users');
-      this.userList = res.data && res.data.data || [];
+      const { data } = await axios.get(`${window.env.apiUrl}users`);
+
+      if (data.code !== 0) {
+        this.userList = [];
+      } else {
+        this.userList = data.data || [];
+      }
+    },
+
+    formCheck(data) {
+      if (!data.name) {
+        alert('Please input name');
+        return false;
+      }
+      if (!data.email) {
+        alert('Please input email');
+        return false;
+      }
+      if (!data.site) {
+        alert('Please input site');
+        return false;
+      }
+      return true;
     },
 
     // add a user
     async addUser() {
-      const data = this.form;
-      const res = await axios.post(window.env.apiUrl + 'users', data);
-      console.log(res);
-      if (res.data) {
+      const formData = this.form;
+      if (!this.formCheck(formData)) {
+        return;
+      }
+      const { data } = await axios.post(`${window.env.apiUrl}users`, formData);
+      if (data.code !== 0) {
+        alert(data.message);
+      } else {
+        this.getUsers();
+      }
+    },
+
+    async deleteUser(name) {
+      const { data } = await axios.delete(`${window.env.apiUrl}users/${name}`);
+      if (data.code !== 0) {
+        alert(data.message);
+      } else {
         this.getUsers();
       }
     },
@@ -43,5 +77,5 @@ module.exports = new Vue({
   mounted() {
     // get user list after ui mounted
     this.getUsers();
-  }
+  },
 });
