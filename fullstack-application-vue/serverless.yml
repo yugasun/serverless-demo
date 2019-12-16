@@ -27,4 +27,5 @@ api:
           vpcId: vpc-6n5x55kb
           subnetId: subnet-4cvr91js
     apigatewayConf:
-      protocol: https
+      protocols:
+        - https
