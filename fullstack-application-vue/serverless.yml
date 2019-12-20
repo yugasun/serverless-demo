@@ -12,17 +12,16 @@ frontend:
     env:
       # get api url after below api service deployed.
       apiUrl: ${api.url}
-    protocols:
-      - https
+    protocol: https
     hosts:
       - host: serverless.yugasun.com
         https:
           certId: ZV99hYOj
-          http2: on
+          http2: off
           httpsType: 4
           # when https on, default should be -2
           # if http2 on, should be 2
-          forceSwitch: 2
+          forceSwitch: -2
 
 api:
   component: '@serverless/tencent-express'
