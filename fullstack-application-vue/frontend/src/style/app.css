@@ -1,0 +1,186 @@
+@font-face {
+  font-family: 'serverless';
+  src: url('../assets/fonts/serverless-regular.woff2') format('woff2'),
+    url('../assets/fonts/serverless-regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+html,
+body {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  line-height: normal;
+  background: var(--mainBg);
+  font-family: 'serverless', 'HelveticaNeue-Regular', 'Helvetica Neue Regular',
+    'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 20px;
+  color: #fff;
+  word-wrap: break-word;
+  letter-spacing: 0.25px;
+}
+
+html,
+body {
+  background: #000000;
+}
+
+.container {
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 30px 50px 50px 50px;
+  width: 1220px;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+section.title {
+  display: flex;
+  overflow: hidden;
+  justify-content: space-between;
+  align-items: center;
+  height: 460px;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.title-left {
+}
+
+.title-left h1 {
+  font-family: Soleil;
+  font-size: 66px;
+  line-height: 80px;
+  margin: 42px 0 32px 0px;
+  letter-spacing: -2px;
+}
+
+.title-left h3 {
+  display: flex;
+  margin: 0 0 80px;
+  font-family: Soleil;
+  font-size: 24px;
+  line-height: 36px;
+}
+
+.title-right {
+  width: 550px;
+}
+
+.title-gif {
+  width: 550px;
+}
+
+.line {
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  margin: 20px auto;
+}
+
+.content-left {
+  text-align: center;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  min-height: 40vh;
+  animation-duration: 2000ms;
+  animation-name: fadeIn;
+}
+
+.hero img {
+  max-height: 40vh;
+  pointer-events: none;
+}
+
+.tagline {
+  align-items: center;
+  height: auto;
+  margin-top: 40px;
+  color: #ffffff;
+  font-size: 18px;
+  text-align: center;
+  opacity: 0;
+  animation-fill-mode: forwards;
+  animation-delay: 500ms;
+  animation-duration: 2000ms;
+  animation-name: fadeIn;
+}
+
+.user-form {
+  color: #fff;
+  width: 500px;
+  margin: 10px auto;
+  padding: 20px;
+  border: 2px solid #fff;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.user-form .submit-btn {
+  height: 30px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.form-item {
+  margin: 10px 0;
+  height: 40px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.form-item input {
+  height: 24px;
+  font-size: 24px;
+  line-height: 24px;
+}
+
+.user-list {
+  color: #fff;
+  width: 500px;
+  margin: 10px auto;
+  padding: 20px;
+  border: 2px solid #fff;
+}
+
+.user-wrapper {
+  margin-top: 20px;
+
+}
+
+/**
+ * Animations
+ */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
