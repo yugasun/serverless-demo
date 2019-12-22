@@ -1,4 +1,4 @@
-# Tencent GMTC Prize H5
+# Fullstac Application Vue
 
 This is a serverless fullstack application, using `Express.js` +
 `Vue.js`. It aims to be the simplest possible way to build a serverless
@@ -45,7 +45,7 @@ Severless cli is very convenient, it can download templates in any github
 project which should contain `serverless.yml` file.
 
 ```console
-$ serverless create --template-url https://github.com/yugasun/gmtc-prize-h5
+$ serverless create --template-url https://github.com/yugasun/tencent-serverless-demo/tree/master/fullstack-application-vue
 ```
 
 ### Bootstrap
