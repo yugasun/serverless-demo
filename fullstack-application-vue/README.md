@@ -1,4 +1,4 @@
-# Fullstac Application Vue
+# Fullstack Application Vue
 
 This is a serverless fullstack application, using `Express.js` +
 `Vue.js`. It aims to be the simplest possible way to build a serverless
