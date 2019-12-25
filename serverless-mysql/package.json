@@ -1,0 +1,18 @@
+{
+  "name": "serverless-mysql",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "yugasun",
+  "license": "MIT",
+  "dependencies": {
+    "mysql2": "^2.1.0",
+    "uuid": "^3.3.3"
+  },
+  "devDependencies": {
+    "serverless-tencent-scf": "^0.1.21"
+  }
+}

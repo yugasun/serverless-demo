@@ -1,0 +1,53 @@
+service: candidate1 # 定义服务名称
+
+provider: # 云厂商相关配置
+  name: tencent
+  region: ap-guangzhou
+  runtime: Nodejs8.9 # Nodejs8.9 or Nodejs6.10
+  role: QCS_SCFFull # You must add a role who can connect to your clound mysql
+  vpcConfig:  # you must set vpc config for mysql connnect
+    vpcId: vpc-xxx
+    subnetId: subnet-xxx
+  environment:
+    variables:
+      DB_HOST: 127.0.0.1
+      DB_USER: root
+      DB_PORT: 3306
+      DB_PASSWORD: 123
+      DB_DATABASE: serverless
+
+plugins:
+  - serverless-tencent-scf
+
+functions: # 定义了 candidateSubmission 的功能
+  candidateSubmission:
+    handler: candidate.submit
+    events:
+      - apigw:
+          name: api
+          parameters:
+            path: candidates
+            stageName: release
+            serviceId: service-xxx
+            httpMethod: POST
+  listCandidates:
+    handler: candidate.list
+    description: List all candidates
+    events:
+      - apigw:
+          name: listApi
+          parameters:
+            path: candidates
+            stageName: release
+            serviceId: service-xxx
+            httpMethod: GET
+  candidateDetails:
+    handler: candidate.get
+    events:
+      - apigw:
+          name: detailApi
+          parameters:
+            path: candidates/{id}
+            stageName: release
+            serviceId: service-xxx
+            httpMethod: GET

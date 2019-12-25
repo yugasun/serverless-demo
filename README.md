@@ -2,11 +2,12 @@
 
 serverless demos on tencent cloud
 
-## Online Preview
+## Project List
 
-[1. QRCode generate](http://service-7kqwzu92-1251556596.gz.apigw.tencentcs.com/release/qrgen?q=yugasun.com)  
-[2. Tencent Machine Translator](http://service-7kqwzu92-1251556596.gz.apigw.tencentcs.com/release/dict?q=hello)  
-[3. Fullstack Application using Vue.js](https://serverless.yugasun.com/)  
+[1. QRCode generate](./qrgen)  
+[2. Tencent Machine Translator](./dict)  
+[3. Fullstack Application using Vue.js](./fullstack-application-vue)  
+[4. Simple Serverless Function with mysql](./serverless-mysql)  
  
 ## License
 
