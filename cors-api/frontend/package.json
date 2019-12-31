@@ -1,0 +1,17 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "CORS frontend demo",
+  "main": "index.js",
+  "scripts": {
+    "demo": "http-server"
+  },
+  "keywords": [
+    "cors"
+  ],
+  "author": "yugasun",
+  "license": "MIT",
+  "dependencies": {
+    "http-server": "^0.12.0"
+  }
+}

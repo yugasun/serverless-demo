@@ -1,0 +1,21 @@
+{
+  "name": "cors-api",
+  "version": "1.0.0",
+  "description": "Tencent CORS API Gateway",
+  "main": "handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "cors",
+    "api"
+  ],
+  "author": "yugasun",
+  "license": "MIT",
+  "devDependencies": {
+    "serverless-tencent-scf": "^0.1.22"
+  },
+  "dependencies": {
+    "middy": "^0.33.1"
+  }
+}

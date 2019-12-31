@@ -16,6 +16,7 @@ dist
 .idea
 build/
 .env
+.env_temp
 .cache*
 .serverless
 .serverless_nextjs

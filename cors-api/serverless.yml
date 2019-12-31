@@ -1,0 +1,53 @@
+service: products-service
+
+provider:
+  name: tencent
+  region: ap-guangzhou
+  runtime: Nodejs8.9 # Nodejs8.9 or Nodejs6.10
+
+plugins:
+  - serverless-tencent-scf
+
+functions:
+  hello:
+    handler: hello.handler
+    events:
+      - apigw:
+          name: api
+          parameters:
+            path: /
+            stageName: release
+            serviceId: service-lanyfiga
+            httpMethod: GET
+            # 开启集成相应，这里必须开启，才能自定义响应 headers
+            integratedResponse: true,
+            # 开启 CORS
+            enableCORS: true
+  getProduct:
+    handler: handler.getProduct
+    events:
+      - apigw:
+          name: api
+          parameters:
+            path: /product
+            stageName: release
+            serviceId: service-lanyfiga
+            httpMethod: GET
+            # 开启集成相应，这里必须开启，才能自定义响应 headers
+            integratedResponse: true,
+            # 开启 CORS
+            enableCORS: true
+  createProduct:
+    handler: handler.createProduct
+    events:
+      - apigw:
+          name: api
+          parameters:
+            path: /product
+            stageName: release
+            serviceId: service-lanyfiga
+            httpMethod: POST
+            # 开启集成相应，这里必须开启，才能自定义响应 headers
+            integratedResponse: true,
+            # 开启 CORS
+            enableCORS: false
