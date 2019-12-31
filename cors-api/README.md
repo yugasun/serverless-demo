@@ -1,4 +1,4 @@
-## Serverless With Mysql
+## CORS cloud function
 
 ### Usage
 

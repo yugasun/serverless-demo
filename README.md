@@ -8,6 +8,7 @@ serverless demos on tencent cloud
 [2. Tencent Machine Translator](./dict)  
 [3. Fullstack Application using Vue.js](./fullstack-application-vue)  
 [4. Simple Serverless Function with mysql](./serverless-mysql)  
+[5. Simple Serverless Function with CORS api](./cors-api)  
  
 ## License
 
