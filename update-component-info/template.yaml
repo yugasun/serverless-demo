@@ -1,13 +1,13 @@
 Resources:
   default:
     Type: TencentCloud::Serverless::Namespace
-    updateComponentInfo:
+    UpdateComponentInfo:
       Type: TencentCloud::Serverless::Function
       Properties:
         CodeUri: ./
         Description: Update Component Infomation
         Handler: index.main_handler
-        Role: QCS_SCFExcuteRole
+        Role: SCF_QcsRole
         MemorySize: 128
         Runtime: Nodejs8.9
         Timeout: 120
