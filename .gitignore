@@ -27,3 +27,4 @@ package-lock.json
 yarn.lock
 test
 .npmrc
+.scf_build

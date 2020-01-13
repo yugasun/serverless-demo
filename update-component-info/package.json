@@ -1,0 +1,24 @@
+{
+  "name": "update-component-info",
+  "version": "1.0.0",
+  "description": "Update Tencent Component Infomation",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "scf deploy -f",
+    "test": "node test/index.spec.js"
+  },
+  "keywords": [
+    "scf",
+    "crawl",
+    "npm-download",
+    "git-stars"
+  ],
+  "author": "yugasun",
+  "license": "MIT",
+  "dependencies": {
+    "cos-nodejs-sdk-v5": "^2.5.14",
+    "dotenv": "^8.2.0",
+    "request": "^2.88.0",
+    "request-promise-native": "^1.0.8"
+  }
+}
