@@ -10,7 +10,7 @@ Resources:
         Role: QCS_SCFExcuteRole
         MemorySize: 128
         Runtime: Nodejs8.9
-        Timeout: 3
+        Timeout: 120
         Events:
           timer: ## 触发器名
             Type: Timer ## 定时触发器
