@@ -4,7 +4,7 @@
   "description": "Update Tencent Component Infomation",
   "main": "index.js",
   "scripts": {
-    "deploy": "scf deploy -f",
+    "deploy": "scf deploy -f --update-event",
     "test": "node test/index.spec.js"
   },
   "keywords": [

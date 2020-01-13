@@ -2,7 +2,7 @@ const COS = require('cos-nodejs-sdk-v5');
 const util = require('util');
 const fs = require('fs');
 
-async function uploadToCos(filePath) {
+async function uploadToCos(region, fileKey, filePath) {
   try {
     const cos = new COS({
       SecretId: process.env.TENCENT_SECRET_ID,
@@ -13,8 +13,8 @@ async function uploadToCos(filePath) {
     const putObject = util.promisify(cos.putObject.bind(cos));
     const res = await putObject({
       Bucket: process.env.BUCKET,
-      Region: 'ap-guangzhou',
-      Key: 'components-with-stats.json',
+      Region: region,
+      Key: fileKey,
       Body: fs.createReadStream(filePath),
       ContentLength: fs.statSync(filePath).size,
     });

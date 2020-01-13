@@ -10,7 +10,8 @@ const url = 'https://api.npmjs.org/downloads/point';
 const taobaoUrl = 'https://registry.npm.taobao.org/downloads/range';
 const cnpmUrl = 'https://registry.cnpmjs.org/downloads/range';
 const repoUrl = 'https://api.github.com/repos';
-const jsonFilename = path.join('/tmp', 'components-with-stats.json');
+const filename = 'components-with-stats.json';
+const filePath = path.join('/tmp', filename);
 
 function getYesterday() {
   const today = new Date();
@@ -125,9 +126,9 @@ async function main() {
 
   // divide github star get, because this api maybe errors
   newJson = await updateGithubStars(newJson);
-  fs.writeFileSync(jsonFilename, JSON.stringify(newJson));
+  fs.writeFileSync(filePath, JSON.stringify(newJson));
 
-  const res = await uploadToCos(jsonFilename);
+  const res = await uploadToCos('ap-guangzhou', filename, filePath);
   if (res === true) {
     console.log('Update success Date: ', yesterday);
   } else {
