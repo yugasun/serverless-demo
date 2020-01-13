@@ -1,3 +1,4 @@
+require('dotenv').config();
 const COS = require('cos-nodejs-sdk-v5');
 const util = require('util');
 const fs = require('fs');
