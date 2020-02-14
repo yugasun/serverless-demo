@@ -1,0 +1,13 @@
+{
+  "name": "admin-system-egg",
+  "version": "0.1.0",
+  "scripts": {
+    "bootstrap": "node scripts/bootstrap.js",
+    "dev": "cd frontend && npm run dev"
+  },
+  "dependencies": {
+    "@serverless/tencent-egg": "^0.1.9",
+    "@serverless/tencent-website": "^1.2.15"
+  },
+  "license": "MIT"
+}
