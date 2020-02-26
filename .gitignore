@@ -16,6 +16,7 @@ dist
 .idea
 build/
 .env
+.env.local
 .env_temp
 .cache*
 .serverless
