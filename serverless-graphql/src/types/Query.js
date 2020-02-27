@@ -13,6 +13,20 @@ const Query = queryType({
           id: userId,
           name: 'yugasun',
           email: 'yuga_sun@163.com',
+          posts: [
+            {
+              id: 1,
+              published: true,
+              title: "Yuga Sun's Blog",
+              content: 'https://yugasun.com/',
+              published: true,
+              author: {
+                id: 1,
+                name: 'yugasun',
+                email: 'yugasun@yugasun.com',
+              },
+            },
+          ],
         }
       },
     })
@@ -24,13 +38,13 @@ const Query = queryType({
         return [
           {
             id: 1,
-            title: 'Subscribe to GraphQL Weekly for community news ',
-            content: 'https://graphqlweekly.com/',
+            title: "Yuga Sun's Blog",
+            content: 'https://yugasun.com/',
             published: true,
             author: {
               id: 1,
-              name: 'Bob',
-              email: 'bob@prisma.io',
+              name: 'yugasun',
+              email: 'yugasun@yugasun.com',
             },
           },
         ]
@@ -46,14 +60,14 @@ const Query = queryType({
         // TODO: handle your data with database, below is a mock data
         return [
           {
-            id: 2,
-            title: 'Subscribe to GraphQL Weekly for community news ',
-            content: 'https://graphqlweekly.com/',
+            id: 1,
+            title: "Yuga Sun's Blog",
+            content: 'https://yugasun.com/',
             published: true,
             author: {
               id: 1,
-              name: 'Bob',
-              email: 'bob@prisma.io',
+              name: 'yugasun',
+              email: 'yugasun@yugasun.com',
             },
           },
         ]
@@ -68,13 +82,13 @@ const Query = queryType({
         // TODO: handle your data with database, below is a mock data
         return {
           id: Number(id),
-          title: 'Subscribe to GraphQL Weekly for community news ',
-          content: 'https://graphqlweekly.com/',
+          title: "Yuga Sun's Blog",
+          content: 'https://yugasun.com/',
           published: true,
           author: {
             id: 1,
-            name: 'Bob',
-            email: 'bob@prisma.io',
+            name: 'yugasun',
+            email: 'yugasun@yugasun.com',
           },
         }
       },

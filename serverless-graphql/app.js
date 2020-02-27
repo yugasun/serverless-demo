@@ -1,4 +1,3 @@
-const path = require('path')
 const { GraphQLServer, GraphQLServerLambda } = require('graphql-yoga')
 const { makeSchema } = require('nexus')
 const { permissions } = require('./src/permissions')
@@ -38,8 +37,11 @@ if (isDev) {
   })
 
   exports.handler = async (event, context, callback) => {
-    return new Promise(resolve => {
+    return new Promise((resolve, reject) => {
       lambda.handler(event, context, (err, output) => {
+        if (err) {
+          reject(err)
+        }
         resolve(output)
       })
     })
