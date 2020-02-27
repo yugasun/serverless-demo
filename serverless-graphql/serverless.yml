@@ -8,6 +8,8 @@ GraphqlServerScf:
     memorySize: 128
     timeout: 30
     codeUri: ./
+    exclude:
+      - .serverless
 
 GraphqlServerApi:
   component: '@serverless/tencent-apigateway'
