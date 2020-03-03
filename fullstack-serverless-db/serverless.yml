@@ -1,0 +1,50 @@
+name: fullstack-application-postgres
+
+frontend:
+  component: '@serverless/tencent-website'
+  # more configuration for @serverless/tencent-website,
+  # refer to: https://github.com/serverless-components/tencent-website/blob/master/docs/configure.md
+  inputs:
+    region: ap-beijing
+    protocol: https
+    code:
+      src: dist
+      root: frontend
+      hook: npm run build
+      envPath: src
+    env:
+      # get api url after below api service deployed.
+      apiUrl: ${api.url}
+
+api:
+  component: '@serverless/tencent-express'
+  # more configuration for @serverless/tencent-website,
+  # refer to: https://github.com/serverless-components/tencent-express/blob/master/docs/configure.md
+  inputs:
+    region: ap-beijing
+    code: ./api
+    functionName: fullstack-api-pg
+    role: ServerlessRole
+    functionConf:
+      timeout: 30
+      vpcConfig:
+        vpcId: vpc-hdlaegxa
+        subnetId: subnet-ht9ut9rt
+      environment:
+        variables:
+          PG_CONNECT_STRING: ${postgresql.connects.private}
+    apigatewayConf:
+      protocols:
+        - http
+        - https
+
+postgresql:
+  component: '@serverless/tencent-postgresql'
+  inputs:
+    region: ap-beijing
+    zone: ap-beijing-3
+    dBInstanceName: serverless
+    extranetAccess: false
+    vpcConfig:
+      vpcId: vpc-hdlaegxa
+      subnetId: subnet-ht9ut9rt

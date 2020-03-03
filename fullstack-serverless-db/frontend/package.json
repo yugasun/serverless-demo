@@ -1,0 +1,29 @@
+{
+  "name": "@serverless-fullstack/frontend",
+  "version": "0.0.1",
+  "description": "",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "vue": "^2.6.10"
+  },
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "alias": {
+    "vue": "./node_modules/vue/dist/vue.common.js"
+  },
+  "eslintConfig": {
+    "env": {
+      "browser": true
+    }
+  },
+  "browserslist": [
+    "last 1 Chrome version"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "cssnano": "^4.1.10",
+    "parcel": "^1.12.4"
+  }
+}

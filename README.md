@@ -1,6 +1,6 @@
-# serverless-demo
+# tencent-serverless-demo
 
-serverless demos on tencent cloud
+Serverless project demo for Tencent Cloud
 
 ## Project List
 
@@ -10,7 +10,8 @@ serverless demos on tencent cloud
 [4. Simple Serverless Function with mysql](./serverless-mysql)  
 [5. Simple Serverless Function with CORS api](./cors-api)  
 [6. Time trigger update tencent comopnents info](./update-comopnent-info)  
-[7. Serverless Graphql](./serverless-graphql)
+[7. Serverless Graphql](./serverless-graphql)  
+[8. Fullstack with serverless db](./fullstack-serverless-db)
 
 ## License
 
