@@ -45,7 +45,7 @@ Severless cli is very convenient, it can download templates in any github
 project which should contain `serverless.yml` file.
 
 ```console
-$ serverless create --template-url https://github.com/yugasun/fullstack-application-postgres
+$ serverless create --template-url https://github.com/yugasun/tencent-serverless-demo/tree/master/fullstack-serverless-db
 ```
 
 ### Bootstrap
@@ -56,10 +56,14 @@ Add the access keys of a
 [Tencent CAM Role](https://console.cloud.tencent.com/cam/capi) with
 `AdministratorAccess` in the `.env` file, like below:
 
-```
+```dotenv
 # .env
 TENCENT_SECRET_ID=xxx
 TENCENT_SECRET_KEY=xxx
+
+# change to your requirement
+REGION=ap-beijing
+ZONE=ap-beijing-3
 ```
 
 Install the NPM dependencies:

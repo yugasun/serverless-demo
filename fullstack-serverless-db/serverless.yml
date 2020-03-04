@@ -5,7 +5,7 @@ frontend:
   # more configuration for @serverless/tencent-website,
   # refer to: https://github.com/serverless-components/tencent-website/blob/master/docs/configure.md
   inputs:
-    region: ap-beijing
+    region: ${env.REGION}
     protocol: https
     code:
       src: dist
@@ -21,15 +21,15 @@ api:
   # more configuration for @serverless/tencent-website,
   # refer to: https://github.com/serverless-components/tencent-express/blob/master/docs/configure.md
   inputs:
-    region: ap-beijing
+    region: ${env.REGION}
     code: ./api
     functionName: fullstack-api-pg
     role: ServerlessRole
     functionConf:
       timeout: 30
       vpcConfig:
-        vpcId: vpc-hdlaegxa
-        subnetId: subnet-ht9ut9rt
+        vpcId: ${vpc.vpcId}
+        subnetId: ${vpc.subnetId}
       environment:
         variables:
           PG_CONNECT_STRING: ${postgresql.connects.private}
@@ -41,10 +41,18 @@ api:
 postgresql:
   component: '@serverless/tencent-postgresql'
   inputs:
-    region: ap-beijing
-    zone: ap-beijing-3
+    region: ${env.REGION}
+    zone: ${env.ZONE}
     dBInstanceName: serverless
     extranetAccess: false
     vpcConfig:
-      vpcId: vpc-hdlaegxa
-      subnetId: subnet-ht9ut9rt
+      vpcId: ${vpc.vpcId}
+      subnetId: ${vpc.subnetId}
+
+vpc:
+  component: '@serverless/tencent-vpc'
+  inputs:
+    region: ${env.REGION}
+    zone: ${env.ZONE}
+    vpcName: serverlessVpc
+    subnetName: serverlessSubnet
