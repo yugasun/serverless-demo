@@ -1,10 +1,11 @@
-name: fullstack-application-postgres
+name: fullstack-serverless-db
 
 frontend:
   component: '@serverless/tencent-website'
   # refer to: https://github.com/serverless-components/tencent-website/blob/master/docs/configure.md
   inputs:
     region: ${env.REGION}
+    bucketName: ${name}
     protocol: https
     code:
       src: dist
@@ -21,7 +22,7 @@ api:
   inputs:
     region: ${env.REGION}
     code: ./api
-    functionName: fullstack-api-pg
+    functionName: ${name}
     role: ServerlessRole
     functionConf:
       timeout: 30

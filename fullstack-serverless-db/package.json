@@ -6,8 +6,8 @@
     "dev": "cd frontend && npm run start"
   },
   "dependencies": {
-    "@serverless/tencent-express": "^1.2.3",
-    "@serverless/tencent-website": "^1.2.9"
+    "@serverless/tencent-express": "^2.3.2",
+    "@serverless/tencent-website": "^1.2.19"
   },
   "devDependencies": {
     "@serverless/eslint-config": "^1.2.1",

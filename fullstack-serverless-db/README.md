@@ -1,4 +1,4 @@
-# Serverless Fullstack Application
+# fullstack-serverless-db
 
 This is a template of serverless fullstack application. It aims to be the
 simplest possible way to build a serverless fullstack application, including a
