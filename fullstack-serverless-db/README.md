@@ -20,6 +20,10 @@ This template includes:
   [@serverless/tencent-postgresql](https://github.com/serverless-components/tencent-postgresql),
   it auto create a postgresql database for backend using.
 
+- **Serverless Vpc**:
+  [@serverless/tencent-vpc](https://github.com/serverless-components/tencent-vpc),
+  it auto create a vpc for scf & pgsql using.
+
 &nbsp;
 
 1. [Prepare](#Prepare)

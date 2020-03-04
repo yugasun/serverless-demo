@@ -2,7 +2,6 @@ name: fullstack-application-postgres
 
 frontend:
   component: '@serverless/tencent-website'
-  # more configuration for @serverless/tencent-website,
   # refer to: https://github.com/serverless-components/tencent-website/blob/master/docs/configure.md
   inputs:
     region: ${env.REGION}
@@ -18,7 +17,6 @@ frontend:
 
 api:
   component: '@serverless/tencent-express'
-  # more configuration for @serverless/tencent-website,
   # refer to: https://github.com/serverless-components/tencent-express/blob/master/docs/configure.md
   inputs:
     region: ${env.REGION}
@@ -40,6 +38,7 @@ api:
 
 postgresql:
   component: '@serverless/tencent-postgresql'
+  # refer to: https://github.com/serverless-components/tencent-postgresql/blob/master/docs/configure.md
   inputs:
     region: ${env.REGION}
     zone: ${env.ZONE}
@@ -51,6 +50,7 @@ postgresql:
 
 vpc:
   component: '@serverless/tencent-vpc'
+  # refer to: https://github.com/serverless-components/tencent-vpc/blob/master/docs/configure.md
   inputs:
     region: ${env.REGION}
     zone: ${env.ZONE}
