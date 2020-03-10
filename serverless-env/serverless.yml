@@ -1,0 +1,24 @@
+CODE_ENV: release
+
+MyExpress:
+  component: '@serverless/tencent-koa'
+  inputs:
+    region: ap-guangzhou
+    functionName: express-function
+    code: ./
+    exclude:
+      - .env.release
+      - .env.test
+    include:
+      - .env.${CODE_ENV}
+    functionConf:
+      timeout: 10
+      memorySize: 128
+      environment:
+        variables:
+          CODE_ENV: ${CODE_ENV}
+    apigatewayConf:
+      protocols:
+        - http
+        - https
+      environment: ${CODE_ENV}

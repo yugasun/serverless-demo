@@ -1,0 +1,21 @@
+{
+  "name": "serverless-env",
+  "version": "1.0.0",
+  "description": "Serverless deploy on different environment",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "serverless-env",
+    "koa",
+    "serverless-component"
+  ],
+  "author": "yugasun",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "koa": "^2.11.0",
+    "koa-router": "^8.0.8"
+  }
+}

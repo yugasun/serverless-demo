@@ -11,7 +11,8 @@ Serverless project demo for Tencent Cloud
 [5. Simple Serverless Function with CORS api](./cors-api)  
 [6. Time trigger update tencent comopnents info](./update-comopnent-info)  
 [7. Serverless Graphql](./serverless-graphql)  
-[8. Fullstack with serverless db](./fullstack-serverless-db)
+[8. Fullstack with serverless db](./fullstack-serverless-db)  
+[9. Fullstack with serverless db](./serverless-env)
 
 ## License
 
