@@ -1,24 +1,48 @@
+# global config
 CODE_ENV: release
 
-MyExpress:
+# function config
+FUNC_CONF:
+  name: express-function
+  memorySize: 128
+  timeout: 10
+  environment:
+    variables:
+      CODE_ENV: ${CODE_ENV}
+
+# apigw config
+API_CONF:
+  protocols:
+    - http
+    - https
+  environment: ${CODE_ENV}
+
+# guangzhou service
+MyExpressGZ:
   component: '@serverless/tencent-koa'
   inputs:
     region: ap-guangzhou
-    functionName: express-function
+    functionName: ${FUNC_CONF.name}
     code: ./
     exclude:
       - .env.release
       - .env.test
     include:
       - .env.${CODE_ENV}
-    functionConf:
-      timeout: 10
-      memorySize: 128
-      environment:
-        variables:
-          CODE_ENV: ${CODE_ENV}
-    apigatewayConf:
-      protocols:
-        - http
-        - https
-      environment: ${CODE_ENV}
+    functionConf: ${FUNC_CONF}
+    apigatewayConf: ${API_CONF}
+
+# beijing service
+MyExpressBJ:
+  component: '@serverless/tencent-koa'
+  inputs:
+    region: ap-beijing
+    functionName: ${FUNC_CONF.name}
+    code: ./
+    exclude:
+      - .env.release
+      - .env.test
+    include:
+      - .env.${CODE_ENV}
+    functionConf: ${FUNC_CONF}
+    apigatewayConf: ${API_CONF}
