@@ -31,7 +31,7 @@ api:
         subnetId: ${vpc.subnetId}
       environment:
         variables:
-          PG_CONNECT_STRING: ${postgresql.connects.private}
+          PG_CONNECT_STRING: ${postgresql.private.connectionString}
     apigatewayConf:
       protocols:
         - http
