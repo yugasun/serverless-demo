@@ -53,7 +53,6 @@ module.exports = {
     try {
       const client = await pool.connect();
       const { rows } = await client.query({
-        name: 'fetch-user',
         text: 'SELECT * FROM users WHERE name = $1',
         values: [name],
       });
