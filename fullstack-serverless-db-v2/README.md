@@ -20,10 +20,6 @@ This template includes:
   [@serverless/tencent-postgresql](https://github.com/serverless-components/tencent-postgresql/tree/v2),
   it auto create a postgresql database for backend using.
 
-- **Serverless Vpc**:
-  [@serverless/tencent-vpc](https://github.com/serverless-components/tencent-vpc),
-  it auto create a vpc for scf & pgsql using.
-
 &nbsp;
 
 1. [Prepare](#Prepare)
@@ -49,7 +45,7 @@ Severless cli is very convenient, it can download templates in any github
 project which should contain `serverless.yml` file.
 
 ```console
-$ serverless create --template-url https://github.com/yugasun/tencent-serverless-demo/tree/master/fullstack-serverless-db
+$ serverless create --template-url https://github.com/yugasun/tencent-serverless-demo/tree/master/fullstack-serverless-db-v2
 ```
 
 ### Bootstrap
