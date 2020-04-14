@@ -12,7 +12,8 @@ Serverless project demo for Tencent Cloud
 [6. Time trigger update tencent comopnents info](./update-comopnent-info)  
 [7. Serverless Graphql](./serverless-graphql)  
 [8. Fullstack with serverless db](./fullstack-serverless-db)  
-[9. Serverless environments management by dotenv](./serverless-env)
+[9. Serverless environments management by dotenv](./serverless-env)  
+[10. Fullstack with serverless db using component v2](./fullstack-serverless-db-v2)
 
 ## License
 

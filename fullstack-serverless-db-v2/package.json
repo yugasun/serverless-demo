@@ -1,0 +1,28 @@
+{
+  "name": "fullstack-serverless-db-v2",
+  "version": "1.0.0",
+  "description": "Fullstack with serverless db v2",
+  "main": "index.js",
+  "scripts": {
+    "bootstrap": "node scripts/bootstrap.js",
+    "deploy": "npm run deploy:db && npm run deploy:api && npm run deploy:frontend",
+    "info": "npm run info:db && npm run info:api && npm run info:frontend",
+    "remove": "npm run remove:db && npm run remove:api && npm run remove:frontend",
+    "deploy:db": "sls deploy",
+    "deploy:api": "sls deploy --target=./api",
+    "deploy:frontend": "sls deploy --target=./frontend",
+    "info:db": "sls info",
+    "info:api": "sls info --target=./api",
+    "info:frontend": "sls info --target=./frontend",
+    "remove:db": "sls remove",
+    "remove:api": "sls remove --target=./api",
+    "remove:frontend": "sls remove --target=./frontend"
+  },
+  "keywords": [
+    "fullstack",
+    "serverless",
+    "serverless-db"
+  ],
+  "author": "yugasun",
+  "license": "MIT"
+}

@@ -1,0 +1,20 @@
+org: yugasun
+app: fullstack-serverless-db
+stage: dev
+component: website
+name: fullstack-frontend-v2
+
+inputs:
+  region: ${env:REGION}
+  bucketName: fullstack-serverless-db
+  protocol: https
+  src:
+    src: ./
+    hook: npm run build
+    dist: ./dist
+    envPath: ./
+    index: index.html
+    error: index.html
+  env:
+    # get api url after below api service deployed.
+    apiUrl: ${output:${stage}:${app}:fullstack-api-v2.apigw.url}
