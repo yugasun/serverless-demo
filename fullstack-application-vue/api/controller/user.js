@@ -1,5 +1,5 @@
 'use strict';
-require('dotenv').config();
+
 const mysql = require('mysql2');
 
 // init mysql connection
@@ -24,8 +24,7 @@ function ApiError(code, msg) {
   const e = new Error(msg);
   e.code = code;
   return e;
-};
-
+}
 
 const pool = initMysqlPool();
 
@@ -49,10 +48,9 @@ module.exports = {
   },
   async getUserByName(name) {
     try {
-      const [row] = await pool.query(
-        'SELECT * FROM users WHERE name = ?',
-        [name],
-      );
+      const [row] = await pool.query('SELECT * FROM users WHERE name = ?', [
+        name,
+      ]);
       if (row.name) {
         return row;
       }
@@ -62,15 +60,11 @@ module.exports = {
     }
   },
   async deleteUserByName(name) {
-    const [data] = await pool.query(
-      `DELETE FROM users WHERE name = "${name}"`,
-    );
+    const [data] = await pool.query(`DELETE FROM users WHERE name = "${name}"`);
     return data;
   },
   async deleteEmptyName() {
-    const [data] = await pool.query(
-      "DELETE from users where name = ''",
-    );
+    const [data] = await pool.query("DELETE from users where name = ''");
     return data;
   },
 };
