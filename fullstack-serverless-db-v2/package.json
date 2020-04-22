@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "bootstrap": "node scripts/bootstrap.js",
-    "deploy": "npm run deploy:db && npm run deploy:api && npm run deploy:frontend",
+    "deploy": "sls deploy --all",
     "info": "npm run info:db && npm run info:api && npm run info:frontend",
-    "remove": "npm run remove:db && npm run remove:api && npm run remove:frontend",
+    "remove": "sls remove --all",
     "deploy:db": "sls deploy",
     "deploy:api": "sls deploy --target=./api",
     "deploy:frontend": "sls deploy --target=./frontend",
