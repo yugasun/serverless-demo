@@ -1,0 +1,35 @@
+org: slsplus
+app: admin-system
+stage: dev
+
+component: egg
+name: admin-system-backend
+
+inputs:
+  region: ${env:REGION}
+  src:
+    src: ./
+    exclude:
+      - '.git/**'
+      - 'docs/**'
+      - 'test/**'
+      - 'node_modules/**'
+  functionName: serverless-admin-system
+  # role: QCS_SCFFull # You must add a role who can connect to your clound mysql
+  layers:
+    - name: ${output:${stage}:${app}:${name}-layer.name}
+      version: ${output:${stage}:${app}:${name}-layer.version}
+  functionConf:
+    timeout: 120
+    # you must set vpc config for mysql connnect
+    vpcConfig:
+      vpcId: ${env:VPC_ID}
+      subnetId: ${env:SUBNET_ID}
+    environment:
+      variables:
+        NODE_ENV: production
+        SERVERLESS: true
+  apigatewayConf:
+    environment: release
+    protocols:
+      - https

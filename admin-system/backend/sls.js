@@ -7,5 +7,4 @@ const app = new Application({
   mode: 'single',
 });
 
-module.exports = app
-;
+module.exports = app;

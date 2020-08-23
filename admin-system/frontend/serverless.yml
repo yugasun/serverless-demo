@@ -1,0 +1,38 @@
+org: slsplus
+app: admin-system
+stage: dev
+
+component: website
+name: admin-system-frontend
+
+# more configuration for @serverless/tencent-website,
+# refer to: https://github.com/serverless-components/tencent-website/blob/master/docs/configure.md
+inputs:
+  src:
+    src: ./
+    dist: ./dist
+    hook: npm run build
+    envPath: ./
+    index: index.html
+    error: index.html
+  env:
+    # get api url after below api service deployed.
+    apiUrl: ${output:${stage}:${app}:admin-system-backend.apigw.url}
+  protocol: https
+  bucketName: ${app}
+  region: ${env:REGION}
+  hosts:
+    - host: sls-admin.yugasun.com
+      async: true
+      area: mainland
+      autoRefresh: true
+      onlyRefresh: false
+      https:
+        switch: on
+        http2: on
+        certInfo:
+          certId: ajzvLP82
+      forceRedirect:
+        switch: on
+        redirectType: https
+        redirectStatusCode: 301

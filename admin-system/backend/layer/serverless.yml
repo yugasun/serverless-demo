@@ -1,0 +1,14 @@
+org: slsplus
+app: admin-system
+stage: dev
+
+component: layer
+name: admin-system-backend-layer
+
+inputs:
+  region: ${env:REGION}
+  name: ${name}
+  src: ../node_modules
+  runtimes:
+    - Nodejs10.15
+    - Nodejs12.16

@@ -2,29 +2,20 @@
 
 [Demo](https://sls-admin.yugasun.com/)
 
-This is a serverless fullstack application, using `Express.js` + `Vue.js`. It
-aims to be the simplest possible way to build a serverless fullstack
-application, including a Vue.js application on the front-end bundled with Parcel
-and back-end API.
+This is an admin system developed by [Serverless Components](https://github.com/serverless/components).
 
 This template includes:
 
 - **Serverless RESTful API**: Using
-  [@serverless/tencent-express](https://github.com/serverless-components/tencent-express)
+  [@serverless/tencent-egg](https://github.com/serverless-components/tencent-egg)
   component, it contains a Servelress Cloud Function and a single API Gateway
   endpoint.
 
 - **Serverless website using Vue.js**:
   [@serverless/tencent-website](https://github.com/serverless-components/tencent-website),
-  it deploys all static files to Cloud Object Storage.
+  it deploys all static files to Cloud Object Storage, and config CDN domain.
 
-- **Serverless CDN**:
-  [@serverless/tencent-cdn](https://github.com/serverless-components/tencent-cdn),
-  auto set CDN and HTTPS.
-
-> **Notice**: The frontend project is initialed by
-> [@vue/cli](https://cli.vuejs.org/) which is official standard tooling for
-> Vue.js development.
+> **Notice**: The frontend project is initialed by [@vue/cli](https://cli.vuejs.org/) which is official standard tooling for Vue.js development.
 
 ### Content
 
@@ -46,10 +37,10 @@ $ npm i serverless -g
 ### Download
 
 Severless cli is very convenient, it can download templates in any github
-project which should contain `serverless.yml` file.
+project.
 
 ```console
-$ serverless create --template-url https://github.com/yugasun/tencent-serverless-demo/tree/master/admin-system
+$ serverless create --template-url https://github.com/yugasun/serverless-demo/tree/master/admin-system
 ```
 
 ### Bootstrap
@@ -64,7 +55,9 @@ Add the access keys of a
 # .env
 TENCENT_SECRET_ID=xxx
 TENCENT_SECRET_KEY=xxx
-TENCENT_APP_ID=xxx
+
+VPC_ID=xxx
+SUBNET_ID=xxx
 ```
 
 Install the NPM dependencies:
@@ -78,18 +71,15 @@ $ npm run bootstrap
 Deploy via the `serverless` command:
 
 ```console
-$ serverless
+$ serverless deploy
 ```
 
 Use the `--debug` flag if you'd like to learn what's happening behind the
 scenes:
 
 ```console
-$ serverless --debug
+$ serverless deploy --debug
 ```
-
-> Notice: After deploy success, please copy the postgressql private url to
-> `api/.env` file.
 
 ### Development
 
@@ -102,12 +92,9 @@ $ yarn start
 
 ### Notice
 
-Because this project integrated cloud db connection, you should create a mysql
-instance on tencent cloud, please refer to official docs:
+Because this project, you should create a [MySQL](https://console.cloud.tencent.com/cdb) and [Redis](https://console.cloud.tencent.com/redis) on Tencent Cloud.
 
-[中文](https://cloud.tencent.com/document/product/583/38012)
-
-After you create a mysql instance, you should create a `.env` file in `api`
+And you should create a `.env` file in `backend`
 folder, and set all required parameters like `.env.example`.
 
 ### License

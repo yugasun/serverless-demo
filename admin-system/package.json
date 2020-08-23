@@ -1,13 +1,29 @@
 {
-  "name": "admin-system-egg",
+  "name": "admin-system",
   "version": "0.1.0",
   "scripts": {
     "bootstrap": "node scripts/bootstrap.js",
-    "dev": "cd frontend && npm run dev"
+    "dev": "cd frontend && npm run dev",
+    "deploy": "serverless deploy --all",
+    "deploy:fe": "serverless deploy --target=./frontend",
+    "deploy:be": "serverless deploy --target=./backend",
+    "deploy:be:layer": "serverless deploy --target=./backend/layer"
   },
-  "dependencies": {
-    "@serverless/tencent-egg": "^0.1.9",
-    "@serverless/tencent-website": "^1.2.15"
+  "license": "MIT",
+  "description": "Admin system developed by [Serverless Components](https://github.com/serverless/components)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yugasun/serverless-demo.git"
   },
-  "license": "MIT"
+  "keywords": [
+    "admin-system",
+    "serverless",
+    "serverless-framework",
+    "serverless-components"
+  ],
+  "author": "yugasun",
+  "bugs": {
+    "url": "https://github.com/yugasun/serverless-demo/issues"
+  },
+  "homepage": "https://github.com/yugasun/serverless-demo#readme"
 }
