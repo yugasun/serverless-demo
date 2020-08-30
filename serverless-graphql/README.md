@@ -1,6 +1,6 @@
-# GraphQL Server with Authentication & Permissions
+# serverless-graphql
 
-[Demo](https://service-3uj6q2x8-1251556596.gz.apigw.tencentcs.com/release/)
+[Demo](https://service-qgzgjjwo-1251556596.gz.apigw.tencentcs.com/)
 
 This example shows how to implement a **GraphQL server with an email-password-based authentication workflow and authentication rules** based on [graphql-yoga](https://github.com/prisma/graphql-yoga) & [graphql-shield](https://github.com/maticzav/graphql-shield).
 
@@ -17,11 +17,8 @@ $ npm i serverless -g
 
 ### Create project
 
-Severless cli is very convenient, it can download templates in any github
-project which should contain `serverless.yml` file.
-
 ```
-$ serverless create --template-url https://github.com/yugasun/tencent-serverless-demo/tree/master/serverless-graphql
+$ serverless create --template-url https://github.com/yugasun/serverless-demo/tree/master/serverless-graphql
 ```
 
 Install npm dependencies:
