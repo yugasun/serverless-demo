@@ -1,0 +1,20 @@
+app: serverless-graphql
+org: slsplus
+stage: dev
+component: apigateway
+name: GraphqlServerApi
+
+inputs:
+  region: ap-guangzhou
+  protocols:
+    - http
+    - https
+  serviceName: serverless_graphql
+  description: serverless graphql api gateway
+  environment: release
+  endpoints:
+    - path: /
+      method: ANY
+      function:
+        functionName: ${output:${stage}:${app}:GraphqlServerScf.functionName}
+        isIntegratedResponse: true
