@@ -233,47 +233,57 @@ If you don't have a Tencent Cloud account, you could [sign up](https://intl.clou
 
 ```yaml
 # serverless.yml
-GraphqlServerScf:
-  component: '@serverless/tencent-scf'
-  inputs:
-    name: serverless-graphql
-    region: ap-guangzhou
-    handler: app.handler
-    description: serverless graphql function
-    memorySize: 128
-    timeout: 30
-    codeUri: ./
+app: serverless-graphql
+org: slsplus
+stage: dev
+component: scf
+name: GraphqlServerScf
 
-GraphqlServerApi:
-  component: '@serverless/tencent-apigateway'
-  inputs:
-    region: ap-guangzhou
-    protocols:
-      - http
-      - https
-    serviceName: serverless_graphql
-    description: serverless graphql api gateway
-    environment: release
-    endpoints:
-      - path: /
-        method: ANY
-        function:
-          functionName: ${GraphqlServerScf.Name}
-          isIntegratedResponse: true
+inputs:
+  src: ./
+  name: serverless-graphql
+  region: ap-guangzhou
+  handler: app.handler
+  description: serverless graphql function
+  memorySize: 128
+  timeout: 30
+```
+
+Create api gateway config `apigw/serverless.yml`:
+
+```yaml
+app: serverless-graphql
+org: slsplus
+stage: dev
+component: apigateway
+name: GraphqlServerApi
+
+inputs:
+  region: ap-guangzhou
+  protocols:
+    - http
+    - https
+  serviceName: serverless_graphql
+  description: serverless graphql api gateway
+  environment: release
+  endpoints:
+    - path: /
+      method: ANY
+      function:
+        functionName: ${output:${stage}:${app}:GraphqlServerScf.functionName}
+        isIntegratedResponse: true
 ```
 
 ### Run Deploy
 
 ```bash
-$ sls --debug
+$ npm run deploy
 ```
-
-> Notice: `sls` is short for `serverless` command.
 
 ### Remove
 
 ```bash
-$ sls remove --debug
+$ npm run remove
 ```
 
 ## Connect to database

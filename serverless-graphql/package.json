@@ -1,5 +1,5 @@
 {
-  "name": "graphql-auth",
+  "name": "serverless-graphql",
   "version": "1.0.0",
   "dependencies": {
     "bcryptjs": "2.4.3",
@@ -11,7 +11,12 @@
   },
   "scripts": {
     "dev": "cross-env NODE_ENV=development node app.js",
-    "deploy": "serverless --debug"
+    "deploy": "npm run deploy:scf && npm run deploy:apigw",
+    "deploy:scf": "serverless deploy",
+    "deploy:apigw": "serverless deploy --target=./apigw",
+    "remove": "npm run remove:apigw && npm run remove:scf",
+    "remove:scf": "serverless remove",
+    "remove:apigw": "serverless remove --target=./apigw"
   },
   "prettier": {
     "singleQuote": true,
