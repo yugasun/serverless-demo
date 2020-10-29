@@ -1,20 +1,28 @@
-# tencent-serverless-demo
+# Serverless Demo
 
-Serverless project demo for Tencent Cloud
+Serverless project demos for Tencent Cloud using [Serverless Components](https://github.com/serverless/components)
 
 ## Project List
 
-[1. QRCode generate](./qrgen)  
-[2. Tencent Machine Translator](./dict)  
-[3. Fullstack Application using Vue.js](./fullstack-application-vue)  
-[4. Simple Serverless Function with mysql](./serverless-mysql)  
-[5. Simple Serverless Function with CORS api](./cors-api)  
-[6. Time trigger update tencent comopnents info](./update-comopnent-info)  
-[7. Serverless Graphql](./serverless-graphql)  
-[8. Fullstack with serverless db](./fullstack-serverless-db)  
-[9. Serverless environments management by dotenv](./serverless-env)  
-[10. Fullstack with serverless db using component v2](./fullstack-serverless-db-v2)
+- [QRCode generate](./qrgen)
+- [Tencent Machine Translator](./dict)
+- [Fullstack Application using Vue.js](./fullstack-application-vue)
+- [Simple Serverless Function with mysql](./serverless-mysql)
+- [Simple Serverless Function with CORS api](./cors-api)
+- [Time trigger update tencent comopnents info](./update-comopnent-info)
+- [Serverless Graphql](./serverless-graphql)
+- [Fullstack with serverless db](./fullstack-serverless-db)
+- [Serverless environments management by dotenv](./serverless-env)
+- [Fullstack with serverless db using component v2](./fullstack-serverless-db-v2)
+- [Serverless Admin System](https://github.com/serverless-plus/serverless-admin-system) 🔥🔥🔥🔥🔥
+- [Serverless Shorten Urls Service](https://github.com/serverless-plus/serverless-v2ex) 🔥🔥🔥🔥
+- [Serverless Order System](https://github.com/serverless-plus/serverless-order-system) 🔥🔥🔥🔥
+- [Serverless V2EX Client](https://github.com/serverless-plus/serverless-v2ex) 🔥🔥🔥
+- [Serverless Cnode Client using Next.js](https://github.com/serverless-plus/serverless-cnode) 🔥🔥🔥🔥
+- [Serverless Cnode Client using Nuxt.js](https://github.com/serverless-plus/serverless-cnode) 🔥🔥🔥
 
 ## License
 
-[MIT](./LICENSE)
+MIT License
+
+Copyright (c) 2019 Yuga Sun
