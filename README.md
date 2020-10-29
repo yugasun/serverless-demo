@@ -15,7 +15,7 @@ Serverless project demos for Tencent Cloud using [Serverless Components](https:/
 - [Serverless environments management by dotenv](./serverless-env)
 - [Fullstack with serverless db using component v2](./fullstack-serverless-db-v2)
 - [Serverless Admin System](https://github.com/serverless-plus/serverless-admin-system) 🔥🔥🔥🔥🔥
-- [Serverless Shorten Urls Service](https://github.com/serverless-plus/serverless-v2ex) 🔥🔥🔥🔥
+- [Serverless Shorten Urls Service](https://github.com/serverless-plus/shorten-urls) 🔥🔥🔥🔥
 - [Serverless Order System](https://github.com/serverless-plus/serverless-order-system) 🔥🔥🔥🔥
 - [Serverless V2EX Client](https://github.com/serverless-plus/serverless-v2ex) 🔥🔥🔥
 - [Serverless Cnode Client using Next.js](https://github.com/serverless-plus/serverless-cnode) 🔥🔥🔥🔥
