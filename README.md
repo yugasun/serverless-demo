@@ -19,7 +19,7 @@ Serverless project demos for Tencent Cloud using [Serverless Components](https:/
 - [Serverless Order System](https://github.com/serverless-plus/serverless-order-system) 🔥🔥🔥🔥
 - [Serverless V2EX Client](https://github.com/serverless-plus/serverless-v2ex) 🔥🔥🔥
 - [Serverless Cnode Client using Next.js](https://github.com/serverless-plus/serverless-cnode) 🔥🔥🔥🔥
-- [Serverless Cnode Client using Nuxt.js](https://github.com/serverless-plus/serverless-cnode) 🔥🔥🔥
+- [Serverless Cnode Client using Nuxt.js](https://github.com/serverless-plus/serverless-cnode-nuxtjs) 🔥🔥🔥
 
 ## License
 
