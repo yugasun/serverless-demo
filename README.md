@@ -1,3 +1,5 @@
+### ‼️Serverless Framework DO NOT support Tencent Cloud anymore, because Serverless Tencent servers are no longer responding, refer to: https://github.com/serverless/serverless/pull/11658
+
 # Serverless Demo
 
 Serverless project demos for Tencent Cloud using [Serverless Components](https://github.com/serverless/components)
