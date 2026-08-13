@@ -1,3 +1,5 @@
+
+
 ### ‼️Serverless Framework DO NOT support Tencent Cloud anymore, because Serverless Tencent servers are no longer responding, refer to: https://github.com/serverless/serverless/pull/11658
 
 # Serverless Demo
@@ -11,7 +13,7 @@ Serverless project demos for Tencent Cloud using [Serverless Components](https:/
 - [Fullstack Application using Vue.js](./fullstack-application-vue)
 - [Simple Serverless Function with mysql](./serverless-mysql)
 - [Simple Serverless Function with CORS api](./cors-api)
-- [Time trigger update tencent comopnents info](./update-comopnent-info)
+- [Time trigger update tencent components info](./update-comopnent-info)
 - [Serverless Graphql](./serverless-graphql)
 - [Fullstack with serverless db](./fullstack-serverless-db)
 - [Serverless environments management by dotenv](./serverless-env)
